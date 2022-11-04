@@ -21,7 +21,6 @@ const routes: Routes = [
           }
         ]
       },
-     
       {
         path: 'species',
         children: [
@@ -33,19 +32,23 @@ const routes: Routes = [
             path: ':id',
             loadChildren: () => import('../specimen-details/specimen-details.module').then( m => m.SpecimenDetailsPageModule)
           }
-    ]
-  },
-  {
-    path: 'spaceship',
-    children: [
-      {
-        path: '',
-        loadChildren: () => import('../spaceships/spaceships.module').then( m => m.SpaceshipsPageModule)
+        ]
       },
       {
-        path: ':id',
-        loadChildren: () => import('../spaceship-details/spaceship-details.module').then( m => m.SpaceshipDetailsPageModule)
+        path: 'spaceships',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../spaceships/spaceships.module').then( m => m.SpaceshipsPageModule)
+          },
+          {
+            path: ':id',
+            loadChildren: () => import('../spaceship-details/spaceship-details.module').then( m => m.SpaceshipDetailsPageModule)
+          }
+        ]
       }
+    ]
+  },
   {
     path: '',
     redirectTo: '/tabs/films',
