@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
-import { IonicModule } from '@ionic/angular';
-
-import { SpaceshipDetailsPageRoutingModule } from './spaceship-details-routing.module';
+import { Routes, RouterModule } from '@angular/router';
 
 import { SpaceshipDetailsPage } from './spaceship-details.page';
 
+const routes: Routes = [
+  {
+    path: '',
+    component: SpaceshipDetailsPage
+  }
+];
+
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    SpaceshipDetailsPageRoutingModule
-  ],
-  declarations: [SpaceshipDetailsPage]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-export class SpaceshipDetailsPageModule {}
+export class FilmDetailsPageRoutingModule {}
